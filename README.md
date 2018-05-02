@@ -1,2 +1,2 @@
 # platzi-video
-Proyecto del curso de React16 en Platzi
+Proyecto del curso de React en Platzi
