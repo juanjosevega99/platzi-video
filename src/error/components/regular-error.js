@@ -1,7 +1,18 @@
 import React from 'react';
+import './regular-error.css'
+
 function RegularError(props) {
 	return (
-		<h1 style={{color: 'white'}} >Ha ocurrido un error</h1>
+    <div className = "RegularError">
+      <p>
+        Oh, oh ...<br/>
+        Algo no salió bien.
+      </p>
+      <p>
+        Espera algunos segundos<br/>
+        y <a href="./">vuelve a intentarlo.</a>
+      </p>
+    </div>
 	)
 }
 

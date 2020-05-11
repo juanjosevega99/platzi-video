@@ -9,13 +9,13 @@ class HandleError extends Component {
 		this.setState({
 			HandleError: true,
 		})
-		// envía este error a un servicio como sentry
+		// Acá se puede enviar el error a un servicios como Sentry
 	}
 	render() {
 		if (this.state.HandleError) {
 			return (
 				<RegularError />
-			)			
+			)
 		}
 		return this.props.children
 	}

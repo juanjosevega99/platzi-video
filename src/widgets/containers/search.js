@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import Search from '../components/search';
+// Redux
+import { connect } from 'react-redux'
+import { searchAsyncMedia } from '../../actions/'
 
 class SearchContainer extends Component {
   state = {
-    value: 'Luis Fonsi'
+    inputValue: '' // --- valor por defecto
   }
+  // --- los metodos deben crearse como arrow functions .. no como funciones estandar para poder usar internamente -this-
   handleSubmit = event => {
      event.preventDefault();
-     console.log(this.input.value, 'submit')
+     console.log(this.input.value)
+     this.props.searchAsyncMedia(this.input.value) // --- el Dispatch de Redux! .. simplificado
   }
   setInputRef = element => {
     this.input = element;
   }
   handleInputChange = event => {
     this.setState({
-      value: event.target.value.replace(' ', '-')
+      inputvalue: event.target.value.replace(' ', '-')
     })
   }
   render() {
@@ -23,10 +28,14 @@ class SearchContainer extends Component {
         setRef={this.setInputRef}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleInputChange}
-        value={this.state.value}
+        value={this.state.inputvalue}
       />
 		)
 	}
 }
 
-export default SearchContainer;
+const mapDispatchToProps = {
+  searchAsyncMedia
+}
+
+export default connect(null, mapDispatchToProps) (SearchContainer) // --- Redux

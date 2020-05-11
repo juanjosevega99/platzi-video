@@ -1,0 +1,13 @@
+/* --- responsividad ---*/
+
+/* --- Desktop --- */
+@media only screen and (min-width: 1023px) {
+  .Search-input {
+    width: 400px;
+  }
+  .UserInfo {
+    width: 50%
+  }
+}
+
+/*missing*/

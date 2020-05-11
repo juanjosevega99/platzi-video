@@ -17,7 +17,7 @@ module.exports = (env) => {
   return {
     entry: {
       "home": path.resolve(__dirname, 'src/entries/home.js'),
-      "platzi-video": path.resolve(__dirname, 'index.js'),
+      // "platzi-video": path.resolve(__dirname, 'index.js'),
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -53,6 +53,12 @@ module.exports = (env) => {
                 }
               }
             ]
+          })
+        },
+        {
+          test: /\.less$/,
+          use: ExtractTextPlugin.extract({
+            use: ["css-loader","less-loader"]
           })
         },
         {
